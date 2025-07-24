@@ -1,69 +1,84 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# RockSynq App
 
-Currently, two official plugins are available:
+This project is a modern web application built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. It features fast development, hot module replacement, and a clean codebase with ESLint integration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- ⚡️ Fast development with Vite
+- 🧑‍💻 Built using React and TypeScript
+- 🎨 Styled with Tailwind CSS
+- 🛡️ Linting with ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Node.js (v18 or newer recommended)
+- npm
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone <your-repo-url>
+cd rocksynq-app
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
+
+### Build
+
+To build the app for production:
+
+```bash
+npm run build
+```
+
+### Lint
+
+To lint your code:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+- `src/` - Main source code
+  - `components/` - React components
+  - `models/` - Data models
+  - `views/` - View logic
+  - `abi/` - Contract ABIs
+  - `assets/` - Static assets
+- `public/` - Static files
+- `index.html` - Main HTML file
+- `vite.config.ts` - Vite configuration
+- `tailwind.config.js` - Tailwind CSS configuration
+- `postcss.config.js` - PostCSS configuration
+
+## Tailwind CSS Setup
+
+Tailwind CSS is configured via `tailwind.config.js` and integrated with PostCSS. If you encounter issues, ensure you have installed both `tailwindcss` and `@tailwindcss/postcss`:
+
+```bash
+npm install -D tailwindcss @tailwindcss/postcss autoprefixer
+```
+
+## ESLint
+
+ESLint is set up for both JavaScript and TypeScript. You can expand the configuration for stricter or more type-aware rules as needed.
+
+## License
+
+MIT
